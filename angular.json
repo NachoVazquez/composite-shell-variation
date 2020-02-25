@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "projects": {
+    "airline-web-app": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/airline-web-app",
+      "sourceRoot": "apps/airline-web-app/src",
+      "prefix": "composite-shell-variation",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/airline-web-app",
+            "index": "apps/airline-web-app/src/index.html",
+            "main": "apps/airline-web-app/src/main.ts",
+            "polyfills": "apps/airline-web-app/src/polyfills.ts",
+            "tsConfig": "apps/airline-web-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/airline-web-app/src/favicon.ico",
+              "apps/airline-web-app/src/assets"
+            ],
+            "styles": ["apps/airline-web-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/airline-web-app/src/environments/environment.ts",
+                  "with": "apps/airline-web-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "airline-web-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "airline-web-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "airline-web-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/airline-web-app/tsconfig.app.json",
+              "apps/airline-web-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/airline-web-app/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/airline-web-app/jest.config.js",
+            "tsConfig": "apps/airline-web-app/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/airline-web-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "airline-web-app-e2e": {
+      "root": "apps/airline-web-app-e2e",
+      "sourceRoot": "apps/airline-web-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/airline-web-app-e2e/cypress.json",
+            "tsConfig": "apps/airline-web-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "airline-web-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "airline-web-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/airline-web-app-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/airline-web-app-e2e/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "airline-web-app"
+}

@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "compositeShellVariation",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "composite-shell-variation",
+      "kebab-case"
+    ]
+  }
+}

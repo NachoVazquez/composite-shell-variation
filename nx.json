@@ -1,0 +1,22 @@
+{
+  "npmScope": "composite-shell-variation",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "airline-web-app": {
+      "tags": []
+    },
+    "airline-web-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["airline-web-app"]
+    }
+  }
+}
