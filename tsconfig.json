@@ -15,7 +15,35 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@composite-shell-variation/booking/shell-web": [
+        "libs/booking/shell-web/src/index.ts"
+      ],
+      "@composite-shell-variation/booking/shell-mobile": [
+        "libs/booking/shell-mobile/src/index.ts"
+      ],
+      "@composite-shell-variation/check-in/shell-mobile": [
+        "libs/check-in/shell-mobile/src/index.ts"
+      ],
+      "@composite-shell-variation/check-in/shell-web": [
+        "libs/check-in/shell-web/src/index.ts"
+      ],
+      "@composite-shell-variation/check-in/feature-ticket-finder": [
+        "libs/check-in/feature-ticket-finder/src/index.ts"
+      ],
+      "@composite-shell-variation/check-in/feature-check-in": [
+        "libs/check-in/feature-check-in/src/index.ts"
+      ],
+      "@composite-shell-variation/booking/feature-passenger-info": [
+        "libs/booking/feature-passenger-info/src/index.ts"
+      ],
+      "@composite-shell-variation/booking/feature-seat-listing": [
+        "libs/booking/feature-seat-listing/src/index.ts"
+      ],
+      "@composite-shell-variation/booking/feature-mobile-seat-listing": [
+        "libs/booking/feature-mobile-seat-listing/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

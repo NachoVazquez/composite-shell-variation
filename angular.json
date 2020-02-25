@@ -123,6 +123,309 @@
           }
         }
       }
+    },
+    "booking-shell-web": {
+      "projectType": "library",
+      "root": "libs/booking/shell-web",
+      "sourceRoot": "libs/booking/shell-web/src",
+      "prefix": "aap",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/booking/shell-web/tsconfig.lib.json",
+              "libs/booking/shell-web/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/booking/shell-web/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/booking/shell-web/jest.config.js",
+            "tsConfig": "libs/booking/shell-web/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/booking/shell-web/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "booking-shell-mobile": {
+      "projectType": "library",
+      "root": "libs/booking/shell-mobile",
+      "sourceRoot": "libs/booking/shell-mobile/src",
+      "prefix": "aap",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/booking/shell-mobile/tsconfig.lib.json",
+              "libs/booking/shell-mobile/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/booking/shell-mobile/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/booking/shell-mobile/jest.config.js",
+            "tsConfig": "libs/booking/shell-mobile/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/booking/shell-mobile/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "check-in-shell-mobile": {
+      "projectType": "library",
+      "root": "libs/check-in/shell-mobile",
+      "sourceRoot": "libs/check-in/shell-mobile/src",
+      "prefix": "aap",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/check-in/shell-mobile/tsconfig.lib.json",
+              "libs/check-in/shell-mobile/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/check-in/shell-mobile/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/check-in/shell-mobile/jest.config.js",
+            "tsConfig": "libs/check-in/shell-mobile/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/check-in/shell-mobile/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "check-in-shell-web": {
+      "projectType": "library",
+      "root": "libs/check-in/shell-web",
+      "sourceRoot": "libs/check-in/shell-web/src",
+      "prefix": "aap",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/check-in/shell-web/tsconfig.lib.json",
+              "libs/check-in/shell-web/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/check-in/shell-web/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/check-in/shell-web/jest.config.js",
+            "tsConfig": "libs/check-in/shell-web/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/check-in/shell-web/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "check-in-feature-ticket-finder": {
+      "projectType": "library",
+      "root": "libs/check-in/feature-ticket-finder",
+      "sourceRoot": "libs/check-in/feature-ticket-finder/src",
+      "prefix": "aap",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/check-in/feature-ticket-finder/tsconfig.lib.json",
+              "libs/check-in/feature-ticket-finder/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/check-in/feature-ticket-finder/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/check-in/feature-ticket-finder/jest.config.js",
+            "tsConfig": "libs/check-in/feature-ticket-finder/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/check-in/feature-ticket-finder/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "check-in-feature-check-in": {
+      "projectType": "library",
+      "root": "libs/check-in/feature-check-in",
+      "sourceRoot": "libs/check-in/feature-check-in/src",
+      "prefix": "aap",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/check-in/feature-check-in/tsconfig.lib.json",
+              "libs/check-in/feature-check-in/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/check-in/feature-check-in/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/check-in/feature-check-in/jest.config.js",
+            "tsConfig": "libs/check-in/feature-check-in/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/check-in/feature-check-in/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "booking-feature-passenger-info": {
+      "projectType": "library",
+      "root": "libs/booking/feature-passenger-info",
+      "sourceRoot": "libs/booking/feature-passenger-info/src",
+      "prefix": "aap",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/booking/feature-passenger-info/tsconfig.lib.json",
+              "libs/booking/feature-passenger-info/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/booking/feature-passenger-info/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/booking/feature-passenger-info/jest.config.js",
+            "tsConfig": "libs/booking/feature-passenger-info/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/booking/feature-passenger-info/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "booking-feature-seat-listing": {
+      "projectType": "library",
+      "root": "libs/booking/feature-seat-listing",
+      "sourceRoot": "libs/booking/feature-seat-listing/src",
+      "prefix": "aap",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/booking/feature-seat-listing/tsconfig.lib.json",
+              "libs/booking/feature-seat-listing/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/booking/feature-seat-listing/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/booking/feature-seat-listing/jest.config.js",
+            "tsConfig": "libs/booking/feature-seat-listing/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/booking/feature-seat-listing/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "booking-feature-mobile-seat-listing": {
+      "projectType": "library",
+      "root": "libs/booking/feature-mobile-seat-listing",
+      "sourceRoot": "libs/booking/feature-mobile-seat-listing/src",
+      "prefix": "aap",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/booking/feature-mobile-seat-listing/tsconfig.lib.json",
+              "libs/booking/feature-mobile-seat-listing/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/booking/feature-mobile-seat-listing/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/booking/feature-mobile-seat-listing/jest.config.js",
+            "tsConfig": "libs/booking/feature-mobile-seat-listing/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/booking/feature-mobile-seat-listing/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

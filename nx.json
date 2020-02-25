@@ -17,6 +17,33 @@
     "airline-web-app-e2e": {
       "tags": [],
       "implicitDependencies": ["airline-web-app"]
+    },
+    "booking-shell-web": {
+      "tags": ["type:shell", "scope:booking"]
+    },
+    "booking-shell-mobile": {
+      "tags": ["type:shell", "scope:booking"]
+    },
+    "check-in-shell-mobile": {
+      "tags": ["type:shell", "scope:ckeck-in"]
+    },
+    "check-in-shell-web": {
+      "tags": ["type:shell", "scope:ckeck-in"]
+    },
+    "check-in-feature-ticket-finder": {
+      "tags": ["type:feature", "scope:ckeck-in"]
+    },
+    "check-in-feature-check-in": {
+      "tags": ["type:feature", "scope:ckeck-in"]
+    },
+    "booking-feature-passenger-info": {
+      "tags": ["type:feature", "scope:booking"]
+    },
+    "booking-feature-seat-listing": {
+      "tags": ["type:feature", "scope:booking"]
+    },
+    "booking-feature-mobile-seat-listing": {
+      "tags": ["type:feature", "scope:booking"]
     }
   }
 }
