@@ -44,6 +44,13 @@
     },
     "booking-feature-mobile-seat-listing": {
       "tags": ["type:feature", "scope:booking"]
+    },
+    "airline-mobile-app": {
+      "tags": []
+    },
+    "airline-mobile-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["airline-mobile-app"]
     }
   }
 }

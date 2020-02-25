@@ -426,6 +426,129 @@
           "styleext": "scss"
         }
       }
+    },
+    "airline-mobile-app": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/airline-mobile-app",
+      "sourceRoot": "apps/airline-mobile-app/src",
+      "prefix": "composite-shell-variation",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/airline-mobile-app",
+            "index": "apps/airline-mobile-app/src/index.html",
+            "main": "apps/airline-mobile-app/src/main.ts",
+            "polyfills": "apps/airline-mobile-app/src/polyfills.ts",
+            "tsConfig": "apps/airline-mobile-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/airline-mobile-app/src/favicon.ico",
+              "apps/airline-mobile-app/src/assets"
+            ],
+            "styles": ["apps/airline-mobile-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/airline-mobile-app/src/environments/environment.ts",
+                  "with": "apps/airline-mobile-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "airline-mobile-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "airline-mobile-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "airline-mobile-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/airline-mobile-app/tsconfig.app.json",
+              "apps/airline-mobile-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/airline-mobile-app/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/airline-mobile-app/jest.config.js",
+            "tsConfig": "apps/airline-mobile-app/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/airline-mobile-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "airline-mobile-app-e2e": {
+      "root": "apps/airline-mobile-app-e2e",
+      "sourceRoot": "apps/airline-mobile-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/airline-mobile-app-e2e/cypress.json",
+            "tsConfig": "apps/airline-mobile-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "airline-mobile-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "airline-mobile-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/airline-mobile-app-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/airline-mobile-app-e2e/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

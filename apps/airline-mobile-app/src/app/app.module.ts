@@ -1,22 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: 'booking',
     loadChildren: () =>
-      import('@composite-shell-variation/booking/shell-web').then(
-        m => m.BookingShellWebModule
+      import('@composite-shell-variation/booking/shell-mobile').then(
+        m => m.BookingShellMobileModule
       )
   },
   {
     path: 'check-in',
     loadChildren: () =>
-      import('@composite-shell-variation/check-in/shell-web').then(
-        m => m.CheckInShellWebModule
+      import('@composite-shell-variation/check-in/shell-mobile').then(
+        m => m.CheckInShellMobileModule
       )
   }
 ];
