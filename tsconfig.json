@@ -42,6 +42,9 @@
       ],
       "@composite-shell-variation/booking/feature-mobile-seat-listing": [
         "libs/booking/feature-mobile-seat-listing/src/index.ts"
+      ],
+      "@composite-shell-variation/shared/utils-transloco-config": [
+        "libs/shared/utils-transloco-config/src/index.ts"
       ]
     }
   },

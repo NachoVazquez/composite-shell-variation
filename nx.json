@@ -51,6 +51,9 @@
     "airline-mobile-app-e2e": {
       "tags": [],
       "implicitDependencies": ["airline-mobile-app"]
+    },
+    "shared-utils-transloco-config": {
+      "tags": ["scope:shared", "type:utils"]
     }
   }
 }
