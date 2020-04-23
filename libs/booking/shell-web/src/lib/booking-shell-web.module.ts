@@ -11,12 +11,13 @@ const routes: Routes = [
       )
   },
   {
-    path: 'passenger-info',
+    path: 'seat-listing',
     loadChildren: () =>
       import('@composite-shell-variation/booking/feature-seat-listing').then(
         m => m.BookingFeatureSeatListingModule
       )
-  }
+  },
+  { path: '', redirectTo: 'passenger-info', pathMatch: 'full' },
 ];
 
 @NgModule({
