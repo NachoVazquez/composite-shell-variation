@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'aap-passenger-info',
+  selector: 'aap-listing-info',
   template: `
     <h1>
       SeatListing
