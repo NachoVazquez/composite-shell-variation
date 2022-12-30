@@ -37,7 +37,7 @@
     "@angular/platform-browser": "9.0.0",
     "@angular/platform-browser-dynamic": "9.0.0",
     "@angular/router": "9.0.0",
-    "@ngneat/transloco": "^2.13.4",
+    "@ngneat/transloco": "^2.23.5",
     "@nrwl/angular": "9.0.3",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.0",
